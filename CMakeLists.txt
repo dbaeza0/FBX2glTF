@@ -17,7 +17,7 @@ if (NOT MSVC)
 
   set(CMAKE_CXX_FLAGS "-Wall -Wextra")
   set(CMAKE_CXX_FLAGS_DEBUG "-g")
-  set(CMAKE_CXX_FLAGS_RELEASE "-O0")
+  set(CMAKE_CXX_FLAGS_RELEASE "-O1")
 endif()
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -203,12 +203,12 @@ if (NOT MSVC)
   target_compile_options(libFBX2glTF PRIVATE
     "-Wno-null-dereference"
     "-Wunused"
-    "-O0"
+    "-O1"
     )
   target_compile_options(FBX2glTF PRIVATE
     "-Wno-null-dereference"
     "-Wunused"
-    "-O0"
+    "-O1"
     )
 endif()
 
