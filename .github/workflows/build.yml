@@ -255,7 +255,7 @@ jobs:
 
       - name: Conan install
         run: |
-          env CMAKE_OSX_ARCHITECTURES=x86_64 conan install . -i build -s build_type=Release --build missing --settings arch=x86_64 --build=missing
+          env CMAKE_OSX_ARCHITECTURES=x86_64 conan install . -i build -s build_type=Debug --build missing --settings arch=x86_64 --build=missing
         shell: bash
 
       - name: Conan build
