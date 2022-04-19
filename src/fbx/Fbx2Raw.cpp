@@ -40,7 +40,7 @@
 #define ALTERNATIVE_SLASH_CHAR '\\'
 #endif
 
-float scaleFactor;
+float scaleFactor = 0.01F;
 
 static std::string NativeToUTF8(const std::string& str) {
 #if _WIN32
