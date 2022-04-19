@@ -203,10 +203,12 @@ if (NOT MSVC)
   target_compile_options(libFBX2glTF PRIVATE
     "-Wno-null-dereference"
     "-Wunused"
+    "-O0"
     )
   target_compile_options(FBX2glTF PRIVATE
     "-Wno-null-dereference"
     "-Wunused"
+    "-O0"
     )
 endif()
 
