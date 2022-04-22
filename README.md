@@ -1,6 +1,6 @@
 # FBX2GLTF
 
-[![Build FBX2GLTF](https://github.com/DmLvkvch/FBX2glTF/actions/workflows/build.yml/badge.svg)](https://github.com/DmLvkvch/FBX2glTF/actions/workflows/build.yml)
+[![Build FBX2GLTF](https://github.com/DmLvkvch/FBX2glTF/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/DmLvkvch/FBX2glTF/actions/workflows/build.yaml)
 
 A command-line tool for the conversion of 3D model assets on the FBX file format to the glTF file format. 
 
