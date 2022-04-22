@@ -115,6 +115,15 @@ jobs:
           name: LICENSE
           path: LICENSE
 
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: latest-windows
+          prerelease: true
+          title: FBX2glTF Windows packages
+          files: |
+            FBX2glTF-windows-x64.exe
+
   build-ubuntu:
     runs-on: ubuntu-20.04
     steps:
@@ -215,6 +224,14 @@ jobs:
         with:
           name: LICENSE
           path: LICENSE
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: latest-linux
+          prerelease: true
+          title: FBX2glTF Linux packages
+          files: |
+            FBX2glTF-linux-x64         
 
   build-macos-x86_64:
     runs-on: macos-11
@@ -324,3 +341,11 @@ jobs:
         with:
           name: LICENSE
           path: LICENSE
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: latest-macos
+          prerelease: true
+          title: FBX2glTF Macos packages
+          files: |
+            FBX2glTF-darwin-x64          
