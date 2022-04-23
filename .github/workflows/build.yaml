@@ -115,10 +115,19 @@ jobs:
           name: LICENSE
           path: LICENSE
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Test with environment variables
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: tag-${{ steps.date.outputs.date }}
+          RELEASE_NAME: release-${{ steps.date.outputs.date }}
+
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: latest-windows
+          automatic_release_tag: windows-${{ steps.date.outputs.date }}
           prerelease: true
           title: FBX2glTF Windows packages
           files: |
@@ -224,10 +233,20 @@ jobs:
         with:
           name: LICENSE
           path: LICENSE
+          
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Test with environment variables
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: tag-${{ steps.date.outputs.date }}
+          RELEASE_NAME: release-${{ steps.date.outputs.date }}
+          
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: latest-linux
+          automatic_release_tag: linux-${{ steps.date.outputs.date }}
           prerelease: true
           title: FBX2glTF Linux packages
           files: |
@@ -341,10 +360,20 @@ jobs:
         with:
           name: LICENSE
           path: LICENSE
+          
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Test with environment variables
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: tag-${{ steps.date.outputs.date }}
+          RELEASE_NAME: release-${{ steps.date.outputs.date }}
+          
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: latest-macos
+          automatic_release_tag: macos-${{ steps.date.outputs.date }}
           prerelease: true
           title: FBX2glTF Macos packages
           files: |
