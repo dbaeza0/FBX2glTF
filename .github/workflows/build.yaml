@@ -69,7 +69,7 @@ jobs:
 
       - name: Conan install
         run: |
-          conan install . --build=missing -i build -s build_type=Release -s compiler="Visual Studio"
+          conan install . --build=missing -i build -s build_type=Release -s compiler="Visual Studio" --build=missing
         shell: cmd
 
       - name: Conan build
@@ -170,7 +170,7 @@ jobs:
 
       - name: Conan install
         run: |
-          conan install . -i build -s build_type=Release --build fmt -s compiler.libcxx=libstdc++11
+          conan install . -i build -s build_type=Release --build fmt -s compiler.libcxx=libstdc++11 --build=missing
         shell: bash
 
       - name: Conan build
@@ -214,7 +214,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: LICENSE
-          path: LICENSE
+          path: LICENSE  
 
   build-macos-x86_64:
     runs-on: macos-11
@@ -323,4 +323,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: LICENSE
-          path: LICENSE
+          path: LICENSE   
