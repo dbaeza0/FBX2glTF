@@ -10,3 +10,7 @@ build/
 sdk/
 
 demo/.godot/
+
+.idea/*
+cmake-build-debug/*
+build_debug
